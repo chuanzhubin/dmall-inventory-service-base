@@ -23,6 +23,7 @@ pipeline {
             steps{
                 sh './gradlew build'
                 sh 'ls -lrt'
+                sh 'pwd'
                 sh './genImages.sh'
                 sh 'ls -l build/libs'
             }
