@@ -22,6 +22,7 @@ pipeline {
         stage('Build') {
             steps{
                 sh './gradlew build'
+                sh './gradlew test'
                 sh 'ls -l build/libs'
             }
         }
