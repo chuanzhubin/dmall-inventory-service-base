@@ -22,7 +22,8 @@ pipeline {
         stage('Build') {
             steps{
                 sh './gradlew build'
-                sh 'genImages.sh'
+                sh 'ls -lrt'
+                sh './genImages.sh'
                 sh 'ls -l build/libs'
             }
         }
