@@ -1,4 +1,4 @@
-# 运行须知  chufa
+# 运行须知  chufa in jenkinsfile
 
 ## 一，安装docker
 
