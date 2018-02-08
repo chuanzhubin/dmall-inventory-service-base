@@ -21,21 +21,21 @@ pipeline {
 
         stage('Build') {
             steps{
-                sh './gradlew build'
-                sh 'ls -lrt'
-                sh 'pwd'
+                sh './gradlew clean build'
+            }
+        }
+
+        stage('Docker image') {
+            steps{
                 sh './genImages.sh'
-                sh 'ls -l build/libs'
             }
         }
-        stage('Test') {
+
+        stage('Deploy to DEV') {
             steps{
-                sh './gradlew test'
-            }
-        }
-        stage('sonaqube') {
-            steps{
-                sh './gradlew sonarqube' 
+                withCredentials([[$class: 'FileBinding', credentialsId: 'kubectl-config-file', variable: 'KUBECTL_CONFIG_FILE']]) {
+                    sh './deployToDEV.sh'
+                }
             }
         }
     }
