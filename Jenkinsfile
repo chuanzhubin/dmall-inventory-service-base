@@ -26,7 +26,7 @@ pipeline {
         }
         stage('sonaqube') {
             steps{
-                sh './gradlew sonarqube' 
+                sh 'ls build/libs' 
             }
         }
         stage('Docker image') {
