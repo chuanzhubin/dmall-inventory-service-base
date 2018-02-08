@@ -7,6 +7,6 @@
  spec:
    containers:
    - name: inventory-service
-     image: ec2-54-95-48-23.ap-northeast-1.compute.amazonaws.com:5000/dmall/inventory-service:latest
+     image: ec2-54-95-48-23.ap-northeast-1.compute.amazonaws.com:5000/chuanzhubin/inventory-service:latest
      ports:
      - containerPort: 8080
