@@ -24,7 +24,11 @@ pipeline {
                 sh './gradlew clean build'
             }
         }
-
+        stage('sonaqube') {
+            steps{
+                sh './gradlew sonarqube' 
+            }
+        }
         stage('Docker image') {
             steps{
                 sh './genImages.sh'
