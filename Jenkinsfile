@@ -33,5 +33,10 @@ pipeline {
                 sh './gradlew test'
             }
         }
+        stage('sonaqube') {
+            steps{
+                sh './gradlew sonarqube'
+            }
+        }
     }
 }
