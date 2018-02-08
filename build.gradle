@@ -62,7 +62,7 @@ task createWrapper(type: Wrapper) {
 sonarqube {
     properties {
         property "sonar.host.url", "http://ec2-13-114-52-20.ap-northeast-1.compute.amazonaws.com:30090"
-        property "sonar.projectName", "linwenjun-dmall-inventory-service"
+        property "sonar.projectName", "chuanzhubin-dmall-inventory-service"
     }
 }
 
