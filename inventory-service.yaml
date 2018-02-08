@@ -7,6 +7,20 @@
  spec:
    containers:
    - name: inventory-service
-     image: ec2-54-95-48-23.ap-northeast-1.compute.amazonaws.com:5000/chuanzhubin/inventory-service:latest
+     image: ec2-54-95-48-23.ap-northeast-1.compute.amazonaws.com:5000/dmall/inventory-service:latest
      ports:
      - containerPort: 8080
+---    
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-service
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    nodePort: 30182
+  selector:
+    app: inventory-service
